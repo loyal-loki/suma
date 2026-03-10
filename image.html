@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Special Memory</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(120deg,#a1c4fd,#c2e9fb);
+font-family:Arial;
+text-align:center;
+}
+
+img{
+width:300px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+button{
+margin-top:30px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Please scan this QR code for treat</h2>
+
+<img src="photo.jpeg" alt="Birthday Image">
+
+<br>
+
+<button onclick="goNext()">pay pana next polam</button>
+
+<script>
+function goNext(){
+window.location.href="wish.html";
+}
+</script>
+
+</body>
+</html>

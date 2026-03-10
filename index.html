@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Surprise</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#e91e63;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎁 Birthday Surprise</h1>
+<p>Click to start the surprise!</p>
+
+<button onclick="goNext()">Start</button>
+
+</div>
+
+<script>
+function goNext(){
+window.location.href="image.html";
+}
+</script>
+
+</body>
+</html>

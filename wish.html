@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Cake</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+font-family:Arial;
+text-align:center;
+}
+
+/* Cake */
+
+.cake{
+position:relative;
+width:220px;
+height:180px;
+}
+
+/* layers */
+
+.layer{
+width:220px;
+height:40px;
+border-radius:10px;
+position:absolute;
+left:0;
+background:#ff7f7f;
+box-shadow:0 5px 0 #d65a5a;
+}
+
+.layer1{bottom:0;}
+.layer2{bottom:40px;}
+.layer3{bottom:80px;}
+
+/* cream */
+
+.cream{
+position:absolute;
+bottom:120px;
+width:220px;
+height:20px;
+background:white;
+border-radius:10px;
+}
+
+/* candle */
+
+.candle{
+position:absolute;
+bottom:140px;
+left:105px;
+width:10px;
+height:40px;
+background:white;
+}
+
+.flame{
+width:14px;
+height:14px;
+background:orange;
+border-radius:50%;
+position:absolute;
+top:-12px;
+left:-2px;
+animation:flicker .4s infinite;
+}
+
+@keyframes flicker{
+0%{transform:scale(1)}
+50%{transform:scale(1.3)}
+100%{transform:scale(1)}
+}
+
+/* knife */
+
+#knife{
+position:absolute;
+top:50px;
+left:50px;
+font-size:40px;
+cursor:grab;
+user-select:none;
+}
+
+/* Birthday Message */
+
+.message{
+margin-top:30px;
+font-size:32px;
+font-weight:bold;
+color:#e91e63;
+animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #fff,0 0 20px #ff4081;
+}
+to{
+text-shadow:0 0 20px #fff,0 0 40px #ff4081;
+}
+}
+
+.submsg{
+font-size:18px;
+color:#444;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎂 Birthday Cake</h1>
+
+<div class="cake">
+
+<div class="layer layer1"></div>
+<div class="layer layer2"></div>
+<div class="layer layer3"></div>
+
+<div class="cream"></div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+</div>
+
+<div id="knife">🔪</div>
+
+<!-- Birthday Message -->
+
+<div class="message">
+🎉 Happy Birthday rajasekar daughter! 🎉
+</div>
+
+<div class="submsg">
+Wishing you happiness, success and lots of fun today and give treats to everyone!..
+</div>
+
+<script>
+
+let knife=document.getElementById("knife");
+
+let isDragging=false;
+
+knife.addEventListener("mousedown",()=>{
+isDragging=true;
+knife.style.cursor="grabbing";
+});
+
+document.addEventListener("mouseup",()=>{
+isDragging=false;
+knife.style.cursor="grab";
+});
+
+document.addEventListener("mousemove",(e)=>{
+if(isDragging){
+knife.style.left=e.pageX+"px";
+knife.style.top=e.pageY+"px";
+}
+});
+
+/* Mobile support */
+
+knife.addEventListener("touchstart",()=>{
+isDragging=true;
+});
+
+document.addEventListener("touchend",()=>{
+isDragging=false;
+});
+
+document.addEventListener("touchmove",(e)=>{
+if(isDragging){
+knife.style.left=e.touches[0].pageX+"px";
+knife.style.top=e.touches[0].pageY+"px";
+}
+});
+
+</script>
+
+</body>
+</html>
